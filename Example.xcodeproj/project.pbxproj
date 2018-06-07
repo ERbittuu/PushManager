@@ -14,9 +14,6 @@
 		2DEAEC8220C8F4A80089FD65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DEAEC8020C8F4A80089FD65 /* LaunchScreen.storyboard */; };
 		2DEAEC8D20C8F4A80089FD65 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC8C20C8F4A80089FD65 /* ExampleTests.swift */; };
 		2DEAEC9C20C8F53E0089FD65 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC9820C8F53E0089FD65 /* PushNotificationManager.swift */; };
-		2DEAEC9D20C8F53E0089FD65 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC9920C8F53E0089FD65 /* AppDelegateExtension.swift */; };
-		2DEAEC9E20C8F53E0089FD65 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC9A20C8F53E0089FD65 /* Base.swift */; };
-		2DEAEC9F20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC9B20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +38,6 @@
 		2DEAEC8C20C8F4A80089FD65 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		2DEAEC8E20C8F4A80089FD65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DEAEC9820C8F53E0089FD65 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
-		2DEAEC9920C8F53E0089FD65 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
-		2DEAEC9A20C8F53E0089FD65 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
-		2DEAEC9B20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManagerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				2DEAEC9820C8F53E0089FD65 /* PushNotificationManager.swift */,
-				2DEAEC9920C8F53E0089FD65 /* AppDelegateExtension.swift */,
-				2DEAEC9A20C8F53E0089FD65 /* Base.swift */,
-				2DEAEC9B20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -219,10 +210,7 @@
 			files = (
 				2DEAEC9C20C8F53E0089FD65 /* PushNotificationManager.swift in Sources */,
 				2DEAEC7A20C8F4A80089FD65 /* ViewController.swift in Sources */,
-				2DEAEC9E20C8F53E0089FD65 /* Base.swift in Sources */,
-				2DEAEC9D20C8F53E0089FD65 /* AppDelegateExtension.swift in Sources */,
 				2DEAEC7820C8F4A80089FD65 /* AppDelegate.swift in Sources */,
-				2DEAEC9F20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,19 +9,19 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate:  Base,UIApplicationDelegate{
+class AppDelegate:  UIResponder,UIApplicationDelegate{
     var window: UIWindow?
      func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
      {
         //Push Notiification Initializer
-         PushManager.shared.setPushNotification(application: application) { (token, error, isgranted) in
+        PushManager.shared.set(_PushFor: application) { (isGranted, token, error) in
             guard error == nil else
             {
                 //Error registering Device
                 print("Error :- \(String(describing: error?.localizedDescription))")
                 return
             }
-            print("Device Token :- \(String(describing: token!)) and Permission :- \(String(describing: isgranted!))")
+            print("Device Token :- \(String(describing: token!)) and Permission :- \(String(describing: isGranted))")
         }
         return true
     }
@@ -46,23 +46,6 @@ class AppDelegate:  Base,UIApplicationDelegate{
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    override func DidRegisterNotification(notification: Notification) {
-        
-    }
-    override func DidReceiveNotification(notification: Notification) {
-        
-    }
-    override func DidFailedRegisterNotification(notification: Notification) {
-        
-    }
-}
-extension AppDelegate:PushNotificationManagerDelegate
-{
-    func applicationReceiveRemoteNotification(_ application: UIApplication?, userInfo: [AnyHashable : Any]) {
-        
-    }
-    
-    
 }
 
 
