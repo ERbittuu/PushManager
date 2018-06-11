@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let manager = PushManager.shared
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getNotification()
+       self.getNotification()
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func didReceiveMemoryWarning() {

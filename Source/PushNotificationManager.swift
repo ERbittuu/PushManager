@@ -16,15 +16,13 @@ class PushManager:NSObject
     public var token:String? = nil
     public var isGranted:Bool = false
     static let shared = PushManager()
-    var objRegisterCompletion : Register!
-    var objReceiveCompletion : Receive!
-    
+    private var objRegisterCompletion : Register!
+    private var objReceiveCompletion : [Receive?] = []
     private override init() { }
     //:Typlealias
     typealias Register = (_ isgranted: Bool,_ token: String?, _ error: Error?) -> Void
     typealias Receive  = ([AnyHashable : Any]) -> Void
     
-    //:init overloading:
     func set(_PushFor application: UIApplication,block:@escaping Register)
     {
         if #available(iOS 10, *)
@@ -66,13 +64,13 @@ class PushManager:NSObject
             let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
             application.registerForRemoteNotifications()
-             self.objRegisterCompletion = block
+            self.objRegisterCompletion = block
         }
        
     }
     func subscribe(completion:@escaping Receive)
     {
-        self.objReceiveCompletion = completion
+        self.objReceiveCompletion.append(completion)
     }
 
 }
@@ -89,7 +87,9 @@ extension PushManager
     }
     func ApplicationReceivedRemoteNotification(_ application: UIApplication?,data: [AnyHashable : Any])
     {
-        self.objReceiveCompletion(data)
+        for ref  in self.objReceiveCompletion {
+            ref!(data)
+        }
     }
 }
 //MARK: AppDelegate Extension
