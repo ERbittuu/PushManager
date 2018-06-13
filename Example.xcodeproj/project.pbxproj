@@ -14,9 +14,6 @@
 		2DEAEC8220C8F4A80089FD65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DEAEC8020C8F4A80089FD65 /* LaunchScreen.storyboard */; };
 		2DEAEC8D20C8F4A80089FD65 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC8C20C8F4A80089FD65 /* ExampleTests.swift */; };
 		2DEAEC9C20C8F53E0089FD65 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC9820C8F53E0089FD65 /* PushNotificationManager.swift */; };
-		2DEAEC9D20C8F53E0089FD65 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC9920C8F53E0089FD65 /* AppDelegateExtension.swift */; };
-		2DEAEC9E20C8F53E0089FD65 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC9A20C8F53E0089FD65 /* Base.swift */; };
-		2DEAEC9F20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEAEC9B20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +38,7 @@
 		2DEAEC8C20C8F4A80089FD65 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		2DEAEC8E20C8F4A80089FD65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DEAEC9820C8F53E0089FD65 /* PushNotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
-		2DEAEC9920C8F53E0089FD65 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
-		2DEAEC9A20C8F53E0089FD65 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
-		2DEAEC9B20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotificationManagerDelegate.swift; sourceTree = "<group>"; };
+		ED91F14220C96EB300EAC9B7 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +81,7 @@
 		2DEAEC7620C8F4A70089FD65 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				ED91F14220C96EB300EAC9B7 /* Example.entitlements */,
 				2DEAEC7720C8F4A80089FD65 /* AppDelegate.swift */,
 				2DEAEC7920C8F4A80089FD65 /* ViewController.swift */,
 				2DEAEC7B20C8F4A80089FD65 /* Main.storyboard */,
@@ -109,9 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				2DEAEC9820C8F53E0089FD65 /* PushNotificationManager.swift */,
-				2DEAEC9920C8F53E0089FD65 /* AppDelegateExtension.swift */,
-				2DEAEC9A20C8F53E0089FD65 /* Base.swift */,
-				2DEAEC9B20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -166,6 +159,11 @@
 				TargetAttributes = {
 					2DEAEC7320C8F4A70089FD65 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2DEAEC8720C8F4A80089FD65 = {
 						CreatedOnToolsVersion = 9.3;
@@ -219,10 +217,7 @@
 			files = (
 				2DEAEC9C20C8F53E0089FD65 /* PushNotificationManager.swift in Sources */,
 				2DEAEC7A20C8F4A80089FD65 /* ViewController.swift in Sources */,
-				2DEAEC9E20C8F53E0089FD65 /* Base.swift in Sources */,
-				2DEAEC9D20C8F53E0089FD65 /* AppDelegateExtension.swift in Sources */,
 				2DEAEC7820C8F4A80089FD65 /* AppDelegate.swift in Sources */,
-				2DEAEC9F20C8F53E0089FD65 /* PushNotificationManagerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,14 +377,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XNJW88L9PS;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.erbittuu.pushmanager.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zac.breez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "bdbabc23-f8eb-4a64-8c3c-bb6c10813488";
+				PROVISIONING_PROFILE_SPECIFIER = Breez_Development_Profile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -399,14 +400,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Example/Example.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = XNJW88L9PS;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.erbittuu.pushmanager.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zac.breez;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "bdbabc23-f8eb-4a64-8c3c-bb6c10813488";
+				PROVISIONING_PROFILE_SPECIFIER = Breez_Development_Profile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

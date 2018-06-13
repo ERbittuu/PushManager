@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let manager = PushManager.shared
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getNotification()
+       self.getNotification()
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func didReceiveMemoryWarning() {
@@ -22,9 +22,9 @@ class ViewController: UIViewController {
     }
     func getNotification() {
         if manager.isGranted{
-                manager.subscribe { (data) in
-                    print("Notification Data - \(data)")
-                }
+            manager.getNotification { (data) in
+                print(data)
+            }
         }
     }
 }
